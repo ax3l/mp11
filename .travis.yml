@@ -185,6 +185,28 @@ matrix:
           packages:
             - libc++-dev
 
+#    - os: linux
+#      compiler: g++-4.8
+#      env: TOOLSET=gcc COMPILER=nvcc CXXSTD=11
+#      addons:
+#        apt:
+#          packages:
+#            - g++-4.8
+#            - nvidia-cuda-dev # 5.5
+#            - nvidia-cuda-toolkit
+
+    - os: linux
+      compiler: "clang++-5.0 -x cuda -nocudainc -nocudalib"
+      #env: TOOLSET=clang COMPILER=clang++-5.0 CXXSTD=11
+      env: TOOLSET=clang COMPILER=clang++-5.0 CXXFLAGS="-x cuda -nocudainc -nocudalib" CXXSTD=11,14
+      addons:
+        apt:
+          packages:
+            - clang-5.0
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-trusty-5.0
+
     - os: osx
       compiler: clang++
       env: TOOLSET=clang COMPILER=clang++ CXXSTD=11,14,1z
@@ -206,7 +228,11 @@ install:
 script:
   - |-
     echo "using $TOOLSET : : $COMPILER ;" > ~/user-config.jam
-  - ./b2 -j3 libs/mp11/test toolset=$TOOLSET cxxstd=$CXXSTD
+  - if [ -z "$CXXFLAGS" ]; then
+      ./b2 -j3 libs/mp11/test toolset=$TOOLSET cxxstd=$CXXSTD;
+    else
+      CXXFLAGS=$CXXFLAGS ./b2 -j3 libs/mp11/test toolset=$TOOLSET cxxstd=$CXXSTD cxxflags="$CXXFLAGS";
+    fi
 
 notifications:
   email:

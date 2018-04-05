@@ -602,7 +602,7 @@ As `mp_fold`, but takes a quoted metafunction.
     template<class L, class V, template<class...> class F> using mp_reverse_fold =
         /*...*/;
 
-`mp_reverse_fold<L<T1, T2, ..., Tn>, V, F>` is `F<T1, F<T2, F<..., F<Tn, V>>>>`, or `V`, if `L` is empty.
+`mp_reverse_fold<L<T1, T2, ..., Tn>, V, F>` is `F<T1, F<T2, F<..., F<Tn, V> > > >`, or `V`, if `L` is empty.
 
 ## mp_reverse_fold_q<L, V, Q>
 

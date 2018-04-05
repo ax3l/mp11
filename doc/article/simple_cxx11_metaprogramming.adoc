@@ -78,7 +78,7 @@ typedef
 ```
 ```
 // C++11
-using Xpcr = add_reference<add_const<add_pointer<X>>>;
+using Xpcr = add_reference<add_const<add_pointer<X> > >;
 ```
 (The example also takes advantage of another {cpp}11 feature - you can now use
 `>>` to close templates without it being interpreted as a right shift.)
@@ -1073,7 +1073,7 @@ supply various primitives that operate on metafunction classes.
 But when we have metafunctions `F`, `G` and `H`, instead of using
 `meta_compose`, in {cpp}11 we can just do
 ```
-template<class... T> using Fgh = F<G<H<T...>>>;
+template<class... T> using Fgh = F<G<H<T...> > >;
 ```
 and that's it. The language makes defining composite functions easy, and there
 is no need for library support. If the functions to be composed are
@@ -1086,7 +1086,7 @@ template<class... T>
 Similarly, if we need a metafunction that will return `sizeof(T) < sizeof(U)`,
 there is no need to enlist a metaprogramming lambda library as in
 ```
-lambda<_a, _b, less<sizeof_<_a>, sizeof_<_b>>>>
+lambda<_a, _b, less<sizeof_<_a>, sizeof_<_b> > > >
 ```
 We could just define it inline:
 ```

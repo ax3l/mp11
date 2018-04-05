@@ -304,7 +304,7 @@ template<class T, class I> using tuple_element =
     typename std::tuple_element<I::value, T>::type;
 
 template<class T> using from_tuple_like =
-    mp_product<tuple_element, mp_list<T>, mp_iota<std::tuple_size<T>>>;
+    mp_product<tuple_element, mp_list<T>, mp_iota<std::tuple_size<T> > >;
 ```
 
 (`mp_iota<N>` is an algorithm that returns an `mp_list` with elements `mp_size_t<0>`, `mp_size_t<1>`, ..., `mp_size_t<N-1>`.)
@@ -318,7 +318,7 @@ as `L1` (an `mp_list`) with contents `tuple_element<T, mp_size_t<0>>`, `tuple_el
 For completeness's sake, here's another, more traditional way to achieve the same result:
 
     template<class T> using from_tuple_like =
-        mp_transform_q<mp_bind_front<tuple_element, T>, mp_iota<std::tuple_size<T>>>;
+        mp_transform_q<mp_bind_front<tuple_element, T>, mp_iota<std::tuple_size<T> > >;
 
 With all these fixes applied, our fully operational `tuple_cat` now looks like this:
 
@@ -338,7 +338,7 @@ template<class T, class I> using tuple_element =
     typename std::tuple_element<I::value, T>::type;
     
 template<class T> using from_tuple_like =
-    mp_product<tuple_element, mp_list<T>, mp_iota<std::tuple_size<T>>>;
+    mp_product<tuple_element, mp_list<T>, mp_iota<std::tuple_size<T> > >;
 
 template<class... Tp,
     class R = mp_append<std::tuple<>, from_tuple_like<remove_cv_ref<Tp>>...>>

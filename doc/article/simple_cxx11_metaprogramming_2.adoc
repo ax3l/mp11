@@ -775,7 +775,7 @@ template<class L> using mp_map_from_list = typename mp_map_from_list_impl<L,
 template<class L, std::size_t I> struct mp_at_c_impl
 {
     using map = mp_map_from_list<L>;
-    using type = mp_second<mp_map_find<map, mp_size_t<I>>>;
+    using type = mp_second<mp_map_find<map, mp_size_t<I> > >;
 };
 
 template<class L, std::size_t I> using mp_at_c = typename mp_at_c_impl<L, I>::type;

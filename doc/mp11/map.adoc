@@ -65,7 +65,7 @@ template<class M, class T> using count_types =
 using L1 = mp_list<float, char, float, float, float, float, char, float>;
 
 using R1 = mp_fold<L1, std::tuple<>, count_types>;
-// std::tuple<std::pair<float, mp_int<6>>, std::pair<char, mp_int<2>>>
+// std::tuple<std::pair<float, mp_int<6>>, std::pair<char, mp_int<2> > >
 ```
 
 ## mp_map_update_q<M, T, Q>

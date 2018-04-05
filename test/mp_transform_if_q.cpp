@@ -69,17 +69,17 @@ int main()
     BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_second, L2, mp_fill<L2, void>>, std::tuple<void, X2&, void, X4 const&>>));
     BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_second, L3, mp_fill<L3, void>>, std::pair<void, X2&>>));
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_third, L1, L1, mp_iota<mp_size<L1>>>, mp_list<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_third, L2, L2, mp_iota<mp_size<L2>>>, std::tuple<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_third, L3, L3, mp_iota<mp_size<L3>>>, std::pair<mp_size_t<0>, X2&>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_third, L1, L1, mp_iota<mp_size<L1> > >, mp_list<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_third, L2, L2, mp_iota<mp_size<L2> > >, std::tuple<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_third, L3, L3, mp_iota<mp_size<L3> > >, std::pair<mp_size_t<0>, X2&>>));
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fourth, L1, L1, L1, mp_iota<mp_size<L1>>>, mp_list<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fourth, L2, L2, L2, mp_iota<mp_size<L2>>>, std::tuple<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fourth, L3, L3, L3, mp_iota<mp_size<L3>>>, std::pair<mp_size_t<0>, X2&>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fourth, L1, L1, L1, mp_iota<mp_size<L1> > >, mp_list<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fourth, L2, L2, L2, mp_iota<mp_size<L2> > >, std::tuple<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fourth, L3, L3, L3, mp_iota<mp_size<L3> > >, std::pair<mp_size_t<0>, X2&>>));
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fifth, L1, L1, L1, L1, mp_iota<mp_size<L1>>>, mp_list<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fifth, L2, L2, L2, L2, mp_iota<mp_size<L2>>>, std::tuple<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fifth, L3, L3, L3, L3, mp_iota<mp_size<L3>>>, std::pair<mp_size_t<0>, X2&>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fifth, L1, L1, L1, L1, mp_iota<mp_size<L1> > >, mp_list<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fifth, L2, L2, L2, L2, mp_iota<mp_size<L2> > >, std::tuple<mp_size_t<0>, X2&, mp_size_t<2>, X4 const&>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform_if_q<Q_is_not_ref, Q_fifth, L3, L3, L3, L3, mp_iota<mp_size<L3> > >, std::pair<mp_size_t<0>, X2&>>));
 
     //
 

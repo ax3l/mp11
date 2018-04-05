@@ -30,22 +30,22 @@ int main()
     using M1 = mp_list<>;
 
     using M2 = mp_map_update_q<M1, std::pair<char, mp_int<0>>, Q_inc>;
-    BOOST_TEST_TRAIT_TRUE((std::is_same<M2, mp_list<std::pair<char, mp_int<0>>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<M2, mp_list<std::pair<char, mp_int<0> > >>));
 
     using M3 = mp_map_update_q<M2, std::pair<char, mp_int<0>>, Q_inc>;
-    BOOST_TEST_TRAIT_TRUE((std::is_same<M3, mp_list<std::pair<char, mp_int<1>>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<M3, mp_list<std::pair<char, mp_int<1> > >>));
 
     using M4 = mp_map_update_q<M3, std::pair<int, mp_int<0>>, Q_inc>;
-    BOOST_TEST_TRAIT_TRUE((std::is_same<M4, mp_list<std::pair<char, mp_int<1>>, std::pair<int, mp_int<0>>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<M4, mp_list<std::pair<char, mp_int<1>>, std::pair<int, mp_int<0> > >>));
 
     using M5 = mp_map_update_q<M4, std::pair<long, mp_int<0>>, Q_inc>;
-    BOOST_TEST_TRAIT_TRUE((std::is_same<M5, mp_list<std::pair<char, mp_int<1>>, std::pair<int, mp_int<0>>, std::pair<long, mp_int<0>>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<M5, mp_list<std::pair<char, mp_int<1>>, std::pair<int, mp_int<0>>, std::pair<long, mp_int<0> > >>));
 
     using M6 = mp_map_update_q<M5, std::pair<long, mp_int<0>>, Q_inc>;
-    BOOST_TEST_TRAIT_TRUE((std::is_same<M6, mp_list<std::pair<char, mp_int<1>>, std::pair<int, mp_int<0>>, std::pair<long, mp_int<1>>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<M6, mp_list<std::pair<char, mp_int<1>>, std::pair<int, mp_int<0>>, std::pair<long, mp_int<1> > >>));
 
     using M7 = mp_map_update_q<M6, std::pair<char, mp_int<0>>, Q_inc>;
-    BOOST_TEST_TRAIT_TRUE((std::is_same<M7, mp_list<std::pair<char, mp_int<2>>, std::pair<int, mp_int<0>>, std::pair<long, mp_int<1>>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<M7, mp_list<std::pair<char, mp_int<2>>, std::pair<int, mp_int<0>>, std::pair<long, mp_int<1> > >>));
 
     return boost::report_errors();
 }

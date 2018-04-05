@@ -60,7 +60,7 @@ int main()
 
         using R1 = mp_remove_if<L1, is_odd>;
 
-        BOOST_TEST_TRAIT_TRUE((std::is_same<R1, mp_list<mp_size_t<0>, mp_size_t<2>, mp_size_t<4>, mp_size_t<6>, mp_size_t<8>, mp_size_t<10>>>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<R1, mp_list<mp_size_t<0>, mp_size_t<2>, mp_size_t<4>, mp_size_t<6>, mp_size_t<8>, mp_size_t<10> > >));
     }
 
     return boost::report_errors();

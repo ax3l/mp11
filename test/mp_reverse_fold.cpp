@@ -39,17 +39,17 @@ int main()
     {
         BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<mp_list<>, void, F>, void>));
         BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<mp_list<X1>, void, F>, F<X1, void>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<mp_list<X1, X2>, void, F>, F<X1, F<X2, void>>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<mp_list<X1, X2, X3>, void, F>, F<X1, F<X2, F<X3, void>>>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<mp_list<X1, X2, X3, X4>, void, F>, F<X1, F<X2, F<X3, F<X4, void>>>>>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<mp_list<X1, X2>, void, F>, F<X1, F<X2, void> > >));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<mp_list<X1, X2, X3>, void, F>, F<X1, F<X2, F<X3, void> > >>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<mp_list<X1, X2, X3, X4>, void, F>, F<X1, F<X2, F<X3, F<X4, void> > > > >));
     }
 
     {
         BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<std::tuple<>, void, F>, void>));
         BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<std::tuple<X1>, void, F>, F<X1, void>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<std::tuple<X1, X2>, void, F>, F<X1, F<X2, void>>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<std::tuple<X1, X2, X3>, void, F>, F<X1, F<X2, F<X3, void>>>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<std::tuple<X1, X2, X3, X4>, void, F>, F<X1, F<X2, F<X3, F<X4, void>>>>>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<std::tuple<X1, X2>, void, F>, F<X1, F<X2, void> > >));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<std::tuple<X1, X2, X3>, void, F>, F<X1, F<X2, F<X3, void> > >>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_reverse_fold<std::tuple<X1, X2, X3, X4>, void, F>, F<X1, F<X2, F<X3, F<X4, void> > > > >));
     }
 
     {

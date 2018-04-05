@@ -15,7 +15,7 @@
 using boost::mp11::mp_all;
 
 template<class V, class... T> using check1 = mp_all<std::is_same<V, void>, std::is_copy_constructible<T>..., std::is_copy_assignable<T>...>;
-template<class V, class... T> using check2 = mp_all<std::is_same<V, void>, mp_all<std::is_copy_constructible<T>..., mp_all<std::is_copy_assignable<T>...>>>;
+template<class V, class... T> using check2 = mp_all<std::is_same<V, void>, mp_all<std::is_copy_constructible<T>..., mp_all<std::is_copy_assignable<T>...> > >;
 
 int main()
 {

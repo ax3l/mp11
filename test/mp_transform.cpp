@@ -48,21 +48,21 @@ int main()
 
     using L1 = mp_list<X1, X2, X3, X4>;
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L1>, mp_list<mp_list<X1>, mp_list<X2>, mp_list<X3>, mp_list<X4>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L1>, mp_list<std::tuple<X1>, std::tuple<X2>, std::tuple<X3>, std::tuple<X4>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::add_pointer, L1>, mp_list<std::add_pointer<X1>, std::add_pointer<X2>, std::add_pointer<X3>, std::add_pointer<X4>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L1>, mp_list<mp_list<X1>, mp_list<X2>, mp_list<X3>, mp_list<X4> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L1>, mp_list<std::tuple<X1>, std::tuple<X2>, std::tuple<X3>, std::tuple<X4> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::add_pointer, L1>, mp_list<std::add_pointer<X1>, std::add_pointer<X2>, std::add_pointer<X3>, std::add_pointer<X4> > >));
     BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<add_pointer, L1>, mp_list<X1*, X2*, X3*, X4*>>));
 
     using L2 = std::tuple<Y1, Y2, Y3, Y4>;
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L1, L2>, mp_list<mp_list<X1, Y1>, mp_list<X2, Y2>, mp_list<X3, Y3>, mp_list<X4, Y4>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L1, L2>, mp_list<std::tuple<X1, Y1>, std::tuple<X2, Y2>, std::tuple<X3, Y3>, std::tuple<X4, Y4>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::pair, L1, L2>, mp_list<std::pair<X1, Y1>, std::pair<X2, Y2>, std::pair<X3, Y3>, std::pair<X4, Y4>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L1, L2>, mp_list<mp_list<X1, Y1>, mp_list<X2, Y2>, mp_list<X3, Y3>, mp_list<X4, Y4> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L1, L2>, mp_list<std::tuple<X1, Y1>, std::tuple<X2, Y2>, std::tuple<X3, Y3>, std::tuple<X4, Y4> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::pair, L1, L2>, mp_list<std::pair<X1, Y1>, std::pair<X2, Y2>, std::pair<X3, Y3>, std::pair<X4, Y4> > >));
 
     using L3 = mp_list<Z1, Z2, Z3, Z4>;
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L1, L2, L3>, mp_list<mp_list<X1, Y1, Z1>, mp_list<X2, Y2, Z2>, mp_list<X3, Y3, Z3>, mp_list<X4, Y4, Z4>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L1, L2, L3>, mp_list<std::tuple<X1, Y1, Z1>, std::tuple<X2, Y2, Z2>, std::tuple<X3, Y3, Z3>, std::tuple<X4, Y4, Z4>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L1, L2, L3>, mp_list<mp_list<X1, Y1, Z1>, mp_list<X2, Y2, Z2>, mp_list<X3, Y3, Z3>, mp_list<X4, Y4, Z4> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L1, L2, L3>, mp_list<std::tuple<X1, Y1, Z1>, std::tuple<X2, Y2, Z2>, std::tuple<X3, Y3, Z3>, std::tuple<X4, Y4, Z4> > >));
 
     //
 
@@ -78,9 +78,9 @@ int main()
     using L6 = std::pair<Y1, Y2>;
     using L7 = std::pair<X1, Y2>;
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L5>, std::pair<mp_list<X1>, mp_list<X2>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L5, L6>, std::pair<mp_list<X1, Y1>, mp_list<X2, Y2>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L5, L6, L7>, std::pair<mp_list<X1, Y1, X1>, mp_list<X2, Y2, Y2>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L5>, std::pair<mp_list<X1>, mp_list<X2> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L5, L6>, std::pair<mp_list<X1, Y1>, mp_list<X2, Y2> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<mp_list, L5, L6, L7>, std::pair<mp_list<X1, Y1, X1>, mp_list<X2, Y2, Y2> > >));
 
     BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<add_pointer, L5>, std::pair<X1*, X2*>>));
 
@@ -95,9 +95,9 @@ int main()
     using L10 = std::pair<V1, V2>;
     using L11 = std::pair<W1, W2>;
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L5, L6, L8, L9>, std::pair<std::tuple<X1, Y1, Z1, U1>, std::tuple<X2, Y2, Z2, U2>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L5, L6, L8, L9, L10>, std::pair<std::tuple<X1, Y1, Z1, U1, V1>, std::tuple<X2, Y2, Z2, U2, V2>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L5, L6, L8, L9, L10, L11>, std::pair<std::tuple<X1, Y1, Z1, U1, V1, W1>, std::tuple<X2, Y2, Z2, U2, V2, W2>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L5, L6, L8, L9>, std::pair<std::tuple<X1, Y1, Z1, U1>, std::tuple<X2, Y2, Z2, U2> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L5, L6, L8, L9, L10>, std::pair<std::tuple<X1, Y1, Z1, U1, V1>, std::tuple<X2, Y2, Z2, U2, V2> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_transform<std::tuple, L5, L6, L8, L9, L10, L11>, std::pair<std::tuple<X1, Y1, Z1, U1, V1, W1>, std::tuple<X2, Y2, Z2, U2, V2, W2> > >));
 
     //
 

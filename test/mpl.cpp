@@ -91,8 +91,8 @@ template<class L1> void test()
 
     BOOST_TEST_TRAIT_TRUE((std::is_same<typename mpl::remove<L1, int>::type, mp_remove<L1, int>>));
 
-    using L2 = typename mpl::copy<L1, mpl::back_inserter<mpl::vector<>>>::type;
-    using L3 = typename mpl::copy<L2, mpl::back_inserter<mp_clear<L1>>>::type;
+    using L2 = typename mpl::copy<L1, mpl::back_inserter<mpl::vector<> > >::type;
+    using L3 = typename mpl::copy<L2, mpl::back_inserter<mp_clear<L1> > >::type;
 
     BOOST_TEST_TRAIT_TRUE((std::is_same<L1, L3>));
 }

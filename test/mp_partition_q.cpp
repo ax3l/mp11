@@ -32,8 +32,8 @@ int main()
         using L2 = mp_list<X1, X1 const, X1*, X2 const, X2*, X3*>;
 
         BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_volatile>>, mp_list<L1, L2>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_const>>, mp_list<mp_list<X1 const, X2 const>, mp_list<X1, X1*, X2*, X3*>>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_pointer>>, mp_list<mp_list<X1*, X2*, X3*>, mp_list<X1, X1 const, X2 const>>>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_const>>, mp_list<mp_list<X1 const, X2 const>, mp_list<X1, X1*, X2*, X3*> > >));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_pointer>>, mp_list<mp_list<X1*, X2*, X3*>, mp_list<X1, X1 const, X2 const> > >));
     }
 
     {
@@ -44,8 +44,8 @@ int main()
         using L2 = std::tuple<X1, X1 const, X1*, X2 const, X2*, X3*>;
 
         BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_volatile>>, std::tuple<L1, L2>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_const>>, std::tuple<std::tuple<X1 const, X2 const>, std::tuple<X1, X1*, X2*, X3*>>>));
-        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_pointer>>, std::tuple<std::tuple<X1*, X2*, X3*>, std::tuple<X1, X1 const, X2 const>>>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_const>>, std::tuple<std::tuple<X1 const, X2 const>, std::tuple<X1, X1*, X2*, X3*> > >));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_partition_q<L2, mp_quote<std::is_pointer>>, std::tuple<std::tuple<X1*, X2*, X3*>, std::tuple<X1, X1 const, X2 const> > >));
     }
 
     return boost::report_errors();

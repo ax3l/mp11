@@ -19,9 +19,9 @@ int main()
     using boost::mp11::mp_int;
 
     BOOST_TEST_TRAIT_TRUE((std::is_same<mp_list_c<int>, mp_list<>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_list_c<int, 1>, mp_list<mp_int<1>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_list_c<int, 1, 3>, mp_list<mp_int<1>, mp_int<3>>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_list_c<int, 1, 3, 5>, mp_list<mp_int<1>, mp_int<3>, mp_int<5>>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_list_c<int, 1>, mp_list<mp_int<1> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_list_c<int, 1, 3>, mp_list<mp_int<1>, mp_int<3> > >));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_list_c<int, 1, 3, 5>, mp_list<mp_int<1>, mp_int<3>, mp_int<5> > >));
 
     return boost::report_errors();
 }

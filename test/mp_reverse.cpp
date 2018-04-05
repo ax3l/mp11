@@ -89,7 +89,7 @@ int main()
 
         using R3 = mp_transform<mp_plus, R1, R2>;
 
-        BOOST_TEST_TRAIT_TRUE((std::is_same<R3, mp_fill<L, mp_size_t<N-1>>>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<R3, mp_fill<L, mp_size_t<N-1> > >));
     }
 
     return boost::report_errors();

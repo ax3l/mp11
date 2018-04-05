@@ -22,16 +22,16 @@ int main()
     BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<mp_list<>>, mp_list<>>));
     BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::tuple<>>, std::tuple<>>));
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<mp_list<std::pair<int, int const>>>, mp_list<int>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::tuple<std::pair<int, int const>>>, std::tuple<int>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<mp_list<std::pair<int, int const> > >, mp_list<int>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::tuple<std::pair<int, int const> > >, std::tuple<int>>));
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<mp_list<std::pair<int, int const>, std::pair<long, long const>>>, mp_list<int, long>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::tuple<std::pair<int, int const>, std::pair<long, long const>>>, std::tuple<int, long>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::pair<std::pair<int, int const>, std::pair<long, long const>>>, std::pair<int, long>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<mp_list<std::pair<int, int const>, std::pair<long, long const> > >, mp_list<int, long>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::tuple<std::pair<int, int const>, std::pair<long, long const> > >, std::tuple<int, long>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::pair<std::pair<int, int const>, std::pair<long, long const> > >, std::pair<int, long>>));
 
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<mp_list<mp_list<int>, mp_list<long, long>, mp_list<long long, long long, long long>>>, mp_list<int, long, long long>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::tuple<mp_list<int>, mp_list<long, long>, mp_list<long long, long long, long long>>>, std::tuple<int, long, long long>>));
-    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::tuple<std::tuple<int>, std::pair<long, long>, std::tuple<long long, long long, long long>>>, std::tuple<int, long, long long>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<mp_list<mp_list<int>, mp_list<long, long>, mp_list<long long, long long, long long> > >, mp_list<int, long, long long>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::tuple<mp_list<int>, mp_list<long, long>, mp_list<long long, long long, long long> > >, std::tuple<int, long, long long>>));
+    BOOST_TEST_TRAIT_TRUE((std::is_same<mp_map_keys<std::tuple<std::tuple<int>, std::pair<long, long>, std::tuple<long long, long long, long long> > >, std::tuple<int, long, long long>>));
 
     return boost::report_errors();
 }

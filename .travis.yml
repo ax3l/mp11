@@ -192,6 +192,21 @@ matrix:
         - sh cuda_8.0.61_375.26_linux-run --silent --toolkit --override --toolkitpath=$HOME/lib/cuda-8.0.61
       script:
         - clang++-5.0 -I . -c -x cuda --cuda-path=$HOME/lib/cuda-8.0.61 -std=c++11 libs/mp11/test/mp11.cpp
+        - $HOME/lib/cuda-8.0.61/bin/nvcc -x cu -I . -c -std=c++11 libs/mp11/test/mp11.cpp
+
+    - os: linux
+      compiler: g++-6
+      addons:
+        apt:
+          packages:
+            - g++-6
+          sources:
+            - ubuntu-toolchain-r-test
+      before_script:
+        - wget https://developer.nvidia.com/compute/cuda/9.1/Prod/local_installers/cuda_9.1.85_387.26_linux
+        - sh cuda_9.1.85_387.26_linux --silent --toolkit --override --toolkitpath=$HOME/lib/cuda-9.1.85
+      script:
+        - $HOME/lib/cuda-9.1.85/bin/nvcc -x cu -I . -c -std=c++11 libs/mp11/test/mp11.cpp
 
     - os: linux
       compiler: clang++-libc++
